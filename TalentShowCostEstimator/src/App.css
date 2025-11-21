@@ -4,3 +4,17 @@
   padding: 2rem;
 }
 
+/* Style native option dropdown to match dark theme where supported */
+select, select:focus {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+/* Many browsers restrict styling of <option>, but this helps on some platforms */
+select option {
+  background-color: rgba(10,10,10,0.9);
+  color: #f8fafc; /* near-white */
+}
+
+
