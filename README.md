@@ -36,7 +36,7 @@ This README is written for visitors who want to run and view the site locally.
 TL;DR — Quick start
 
 ```powershell
-cd "e:\CS\Sem 4\Differential Equations\TalentShowCostEstimator\TalentShowCostEstimator"
+cd "PATH\TO\YOUR\TalentShowCostEstimator"
 npm install
 npm run dev
 
