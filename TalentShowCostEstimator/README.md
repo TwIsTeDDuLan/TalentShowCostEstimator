@@ -1,75 +1,108 @@
-# React + TypeScript + Vite
+# TalentShowCostEstimator
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a Vite + React + TypeScript project with Tailwind CSS configured.
 
-Currently, two official plugins are available:
+This README explains how to set up and run the project locally, plus common Tailwind troubleshooting tips.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+**Project folder**: `/TalentShowCostEstimator`
 
-## React Compiler
+## Prerequisites
+- Node.js 18+ (LTS recommended)
+- npm, pnpm, or yarn
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+## Setup (one-time)
+1. Open a terminal and change to the project folder:
 
-Note: This will impact Vite dev & build performances.
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```powershell
+cd "your\path\to\TalentShowCostEstimator"
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+2. Install dependencies (pick one):
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+```powershell
+# npm
+npm install
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+# or pnpm
+pnpm install
+
+# or yarn
+# TalentShowCostEstimator
+
+Welcome — this repository contains a small React + TypeScript web app built with Vite and styled with Tailwind CSS.
+
+This README is written for visitors who want to run and view the site locally.
+
+TL;DR — Quick start
+
+```powershell
+cd "e:\CS\Sem 4\Differential Equations\TalentShowCostEstimator\TalentShowCostEstimator"
+npm install
+npm run dev
+
+# then open the URL shown in the terminal (e.g. http://localhost:5173 or 5174)
 ```
+
+What you can expect
+
+- A small single-page UI to estimate talent show costs (form inputs, simple calculator UI).
+- Tailwind CSS utilities for layout and styling.
+
+Prerequisites
+
+- Node.js 18+ (LTS recommended)
+- npm (or `pnpm` / `yarn` if you prefer)
+
+Install and run (detailed)
+
+1. Clone or download the repository and open a terminal in the project folder above.
+2. Install dependencies:
+
+```powershell
+npm install
+# or pnpm install
+# or yarn install
+```
+
+3. Start the dev server:
+
+```powershell
+npm run dev
+```
+
+4. Open the URL printed by Vite (default `http://localhost:5173`, or a nearby port if 5173 is in use).
+
+Build for production
+
+```powershell
+npm run build
+npm run preview
+```
+
+How to use the site
+
+- The main page contains a heading and a small form for entering numbers (e.g., talents, guests). Change values and see how the UI responds.
+- Labels and placeholders guide the expected input.
+
+Tailwind CSS notes for visitors
+
+- The project uses Tailwind v4 via PostCSS. Styles are available through `src/index.css` which imports Tailwind.
+- If you edit CSS or Tailwind config, restart the dev server to pick up the changes.
+
+If things don't look styled
+
+- Confirm the dev server is running and you opened the correct localhost URL.
+- Open Developer Tools → Network and check the CSS file (search for classes like `.text-white` or `.text-4xl`). If these classes are missing, Tailwind did not build; check the terminal for PostCSS/Vite errors.
+
+Common troubleshooting
+
+- "Unknown at rule `@tailwind`" in your editor — that's usually a linter warning; runtime can still work.
+- If you see errors about the PostCSS plugin, ensure `postcss.config.cjs` includes `@tailwindcss/postcss` and `autoprefixer`.
+
+Contact / License
+
+- This project is an example app; modify and reuse as you wish. No license specified.
+
+Feedback or help
+
+- If you run into problems launching the site, share the terminal output from `npm run dev` and a screenshot of the page and I will help diagnose.
